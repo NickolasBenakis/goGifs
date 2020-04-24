@@ -4,9 +4,9 @@ import Home from './pages/home';
 
 function App() {
 	return (
-		<React.fragment>
+		<div>
 			<Home />
-		</React.fragment>
+		</div>
 	);
 }
 

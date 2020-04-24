@@ -1,7 +1,11 @@
 import React from 'react';
 
-const gif = () => {
-	return <div></div>;
+const Gif = ({ gif }) => {
+	return (
+		<li>
+			<img src={gif.photo} alt='gif' />
+		</li>
+	);
 };
 
-export default gif;
+export default Gif;

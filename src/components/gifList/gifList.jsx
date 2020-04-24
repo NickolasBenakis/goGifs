@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import Gif from '../gif/gif';
 
-const gifList = () => {
+const GifList = ({ list }) => {
 	return (
-		<div>
-			
-		</div>
-	)
-}
+		<ul>
+			{list.map((gif, index) => {
+				return <Gif key={gif.id} gif={gif} />;
+			})}
+		</ul>
+	);
+};
 
-export default gifList
+export default GifList;

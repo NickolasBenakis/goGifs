@@ -3,12 +3,14 @@
 	"plugins": ["prettier", "react", "import", "jsx-a11y", "react-hooks"],
 	"rules": {
 		"react-hooks/rules-of-hooks": "error",
+		"rest-spread-spacing": "off",
 		"no-console": "warn",
 		"prettier/prettier": "error",
 		"react/prop-types": "off",
 		"react/jsx-filename-extension": "off",
 		"import/prefer-default-export": "off",
 		"no-nested-ternary": "off",
+		"prefer-spread": "warn",
 		"no-underscore-dangle": [2, { "allow": ["__REDUX_DEVTOOLS_EXTENSION__"] }]
 	},
 	"parserOptions": {
