@@ -1,4 +1,4 @@
-import { SEARCH } from './types';
+import { appActionTypes } from './types';
 
 export const INITIAL_STATE = {
 	term: '',
@@ -7,12 +7,12 @@ export const INITIAL_STATE = {
 
 export const reducer = (state = INITIAL_STATE, action) => {
 	switch (action.type) {
-		case SEARCH:
+		case appActionTypes.CHANGE_SEARCH_TERM:
 			return {
 				...state,
 				term: action.payload,
 			};
-		case GIFS:
+		case appActionTypes.GET_GIFS:
 			return {
 				...state,
 				gifs: action.payload,

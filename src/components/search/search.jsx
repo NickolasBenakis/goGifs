@@ -1,14 +1,17 @@
 import React from 'react';
 import { debounce } from 'lodash';
+import { connect } from 'react-redux';
+import { changeSearchTerm } from '../../redux/actions';
+import { selectCurrentTerm } from '../../redux/selectors';
 
-const Search = () => {
-	const [term, setTerm] = React.useState('');
-	const dbSetTerm = debounce((currentTerm) => setTerm(currentTerm), 1000);
+const Search = ({ term, changeTerm }) => {
+	const debounceSearch = debounce((value) => changeTerm(value), 500);
 	const handleChange = (e) => {
 		e.persist();
-		dbSetTerm(e.target.value);
+		debounceSearch(e.target.value);
 	};
 	console.log('render search', term);
+
 	return (
 		<div className='control'>
 			<input
@@ -23,4 +26,12 @@ const Search = () => {
 	);
 };
 
-export default React.memo(Search);
+const mapStateToProps = (state) => ({
+	term: selectCurrentTerm(state),
+});
+
+const mapDispatchToProps = (dispatch) => ({
+	changeTerm: (item) => dispatch(changeSearchTerm(item)),
+});
+
+export default React.memo(connect(mapStateToProps, mapDispatchToProps)(Search));
