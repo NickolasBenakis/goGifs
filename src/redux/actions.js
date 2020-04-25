@@ -10,6 +10,8 @@ export const changeSearchTerm = (term) => ({
 	payload: term,
 });
 
+export const clear = () => ({ type: appActionTypes.CLEAR });
+
 export const gifsFetchRequest = (term) => ({
 	type: appActionTypes.GIFS_FETCH_REQUESTED,
 	payload: term,

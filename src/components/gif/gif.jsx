@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './gif.module.scss';
+import handleImageUrl from '../../utils/handleImageUrl';
 
 const Gif = ({ gif }) => {
 	const cardClass = classNames('card', [styles.cardContainer]);
@@ -9,7 +10,10 @@ const Gif = ({ gif }) => {
 		<div className={cardClass}>
 			<div className={imageClass}>
 				<figure className='image is-4by3'>
-					<img src={gif.images.original.url} alt='Placeholder' />
+					<img
+						src={handleImageUrl(gif.images.original.url)}
+						alt='Placeholder'
+					/>
 				</figure>
 			</div>
 			<div className='card-content'>

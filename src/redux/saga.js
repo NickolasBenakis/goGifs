@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from 'redux-saga/effects';
+import { call, put, takeLatest, cancel } from 'redux-saga/effects';
 import getGifs from '../api/getGifs';
 import { appActionTypes } from './types';
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions

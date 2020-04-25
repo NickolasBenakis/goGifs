@@ -23,13 +23,18 @@ export const reducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				loader: false,
-				gifs: [],
 			};
 		case appActionTypes.GIFS_FETCH_REQUESTED:
 			return {
 				...state,
 				loader: true,
 				term: action.payload,
+			};
+		case appActionTypes.CLEAR:
+			return {
+				...state,
+				gifs: [],
+				term: '',
 			};
 		default:
 			return state;
