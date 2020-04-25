@@ -9,7 +9,9 @@ const Home = () => {
 			<section className={styles.searchSection}>
 				<Search />
 			</section>
-			<section>{/* <GifList /> */}</section>
+			<section className={styles.listSection}>
+				<GifList />
+			</section>
 		</div>
 	);
 };

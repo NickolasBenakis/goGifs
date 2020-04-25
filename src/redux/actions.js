@@ -9,3 +9,8 @@ export const changeSearchTerm = (term) => ({
 	type: appActionTypes.CHANGE_SEARCH_TERM,
 	payload: term,
 });
+
+export const gifsFetchRequest = (term) => ({
+	type: appActionTypes.GIFS_FETCH_REQUESTED,
+	payload: term,
+});

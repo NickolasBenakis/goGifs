@@ -11,9 +11,17 @@
   min-height: 100vh;
 
   .searchSection {
-    margin: 0 auto;
+    margin: 15px auto;
     width: 100%;
     display: flex;
+    justify-content: center;
+  }
+
+  .listSection {
+    margin: 15px auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
   }
 }
