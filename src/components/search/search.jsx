@@ -10,7 +10,6 @@ const Search = ({ term, changeTerm }) => {
 		e.persist();
 		debounceSearch(e.target.value);
 	};
-	console.log('render search', term);
 
 	return (
 		<div className='control'>
@@ -18,7 +17,7 @@ const Search = ({ term, changeTerm }) => {
 				type='search'
 				className='input'
 				name='searchGifs'
-				id='searchGifs'
+				data-testid='searchGifs'
 				placeholder='search...'
 				onChange={handleChange}
 			/>
