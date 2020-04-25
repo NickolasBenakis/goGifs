@@ -1,6 +1,10 @@
 @import './variables.scss';
 
 
+html {
+  background-color: $black;
+}
+
 body {
   margin: 0;
   font-size: 62.5%;

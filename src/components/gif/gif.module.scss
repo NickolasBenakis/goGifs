@@ -1,0 +1,33 @@
+.gifContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageContainer {
+  width: 200px;
+  padding: 10px;
+  margin: 0 auto;
+
+  @media screen and(min-width: 600px) {
+    width: 300px;
+  }
+
+  @media screen and(min-width: 1080px) {
+    width: 400px;
+  }
+}
+
+.cardContainer {
+  width: 200px;
+  margin: 15px auto;
+
+  @media screen and(min-width: 600px) {
+    width: 300px;
+  }
+
+  @media screen and(min-width: 1080px) {
+    width: 400px;
+  }
+}
