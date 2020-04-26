@@ -10,7 +10,7 @@ const Search = () => {
 	const dispatch = useDispatch();
 	const debounceSearch = debounce(
 		(value) => dispatch(gifsFetchRequest(value)),
-		450
+		1000
 	);
 	const handleChange = (e) => {
 		e.persist();
@@ -23,24 +23,23 @@ const Search = () => {
 		if (e.target.value === '' || e.target.value.length < 2) return;
 		debounceSearch(e.target.value);
 	};
-	const handleClicks = (e) => {
-		e.persist();
-		console.log(e.keyCode);
+
+	const handleClear = (e) => {
+		inputRef.current.value = '';
+		dispatch(clear());
 	};
-	const handleClear = (e) => dispatch(clear());
 	const inputClass = classNames('input', {});
 
 	return (
 		<div className='control'>
 			<input
 				ref={inputRef}
-				type='search'
+				type='text'
 				className={inputClass}
 				name='searchGifs'
 				data-testid='searchGifs'
 				placeholder='search..'
 				onChange={handleChange}
-				onKeyDown={handleClicks}
 			/>
 			<Button
 				text='clear'

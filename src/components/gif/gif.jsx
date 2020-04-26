@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './gif.module.scss';
 import handleImageUrl from '../../utils/handleImageUrl';
 
-const Gif = ({ gif }) => {
+const Gif = ({ gif = {} }) => {
 	const cardClass = classNames('card', [styles.cardContainer]);
 	const imageClass = classNames('card-image', [styles.imageContainer]);
 	return (

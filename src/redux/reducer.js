@@ -11,7 +11,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
 		case appActionTypes.CHANGE_SEARCH_TERM:
 			return {
 				...state,
-				term: action.payload,
+				term: action.payload !== state.term ? action.payload : state.term,
 			};
 		case appActionTypes.GIFS_FETCH_SUCCEEDED:
 			return {
@@ -33,7 +33,7 @@ export const reducer = (state = INITIAL_STATE, action) => {
 		case appActionTypes.CLEAR:
 			return {
 				...state,
-				gifs: [],
+				gifs: state.gifs.length ? [] : state.gifs,
 				term: '',
 			};
 		default:

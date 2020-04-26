@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const Notification = ({ text, type, size }) => {
+const Notification = ({ text = '', type = '', size = '' }) => {
 	const containerRef = React.useRef(null);
 	const notRef = React.useRef(null);
 	const notificationClass = classNames(
