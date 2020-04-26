@@ -8,23 +8,18 @@ import Button from '../button/button';
 const Search = () => {
 	const inputRef = React.useRef(null);
 	const dispatch = useDispatch();
-	const debounceSearch = debounce(
-		(value) => dispatch(gifsFetchRequest(value)),
-		1000
-	);
-	const handleChange = (e) => {
-		e.persist();
-		if (e.target.value !== '' && e.target.value.length < 2) {
-			e.target.classList.add('is-danger');
-		} else {
-			e.target.classList.remove('is-danger');
-			e.target.classList.add('is-success');
+	const debounceSearch = debounce((value) => {
+		if (value) {
+			dispatch(gifsFetchRequest(value));
 		}
-		if (e.target.value === '' || e.target.value.length < 2) return;
-		debounceSearch(e.target.value);
+	}, 1000);
+
+	const handleChange = (event) => {
+		event.persist();
+		debounceSearch(event.target.value);
 	};
 
-	const handleClear = (e) => {
+	const handleClear = () => {
 		inputRef.current.value = '';
 		dispatch(clear());
 	};

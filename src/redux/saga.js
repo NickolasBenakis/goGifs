@@ -5,6 +5,7 @@ import { appActionTypes } from './types';
 function* fetchGifs(action) {
 	try {
 		const gifs = yield call(getGifs, action.payload);
+
 		yield put({
 			type: appActionTypes.GIFS_FETCH_SUCCEEDED,
 			payload: gifs.data,
